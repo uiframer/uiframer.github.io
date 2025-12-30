@@ -1,0 +1,243 @@
+:root {
+  --surface: #ffffff;
+  --surface-2: #f9fafb;
+
+  --border: #e5e7eb;
+
+  --text-main: #111827;
+  --text-muted: #6b7280;
+
+  --accent: #7280FF;
+  --green: #16a34a;
+  --red: #dc2626;
+  --purple: #7c3aed;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #fcfcff;
+  font-family: Inter, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Helvetica, Arial, sans-serif;
+  color: var(--text-main);
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+/* ================= TOP BAR ================= */
+
+.topbar {
+  height: 56px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.topbar h1 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.avatar-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ================= APP LAYOUT ================= */
+
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 24px 16px 80px;
+}
+
+/* ================= EDITOR ================= */
+
+.editor {
+  background: var(--surface);
+  border-radius: 14px;
+  padding: 16px;
+  box-shadow:
+    0 1px 2px rgba(0,0,0,0.04),
+    0 8px 24px rgba(0,0,0,0.06);
+  margin-bottom: 24px;
+}
+
+.editor select,
+.editor textarea {
+  width: 100%;
+  border: none;
+  background: transparent;
+  font-family: inherit;
+  color: var(--text-main);
+}
+
+.editor select {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.editor textarea {
+  font-size: 15px;
+  min-height: 90px;
+  resize: none;
+  outline: none;
+}
+
+.editor button {
+  margin-top: 10px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* ================= POST ================= */
+
+.card {
+  background: var(--surface);
+  border-radius: 14px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow:
+    0 1px 2px rgba(0,0,0,0.04),
+    0 6px 16px rgba(0,0,0,0.06);
+}
+
+.post-header {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.avatar {
+  width: 38px;
+  height: 38px;
+  font-size: 16px;
+  color: black;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.post-header strong {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.post-header small {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.post-content {
+  margin: 12px 0;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* ================= MOOD TAG ================= */
+
+.mood {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--surface-2);
+  margin-bottom: 10px;
+}
+
+.mood.cool { color: var(--green); }
+.mood.fire { color: var(--red); }
+.mood.listen { color: var(--purple); }
+
+/* ================= ACTIONS ================= */
+
+.actions {
+  display: flex;
+  gap: 16px;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.actions span {
+  cursor: pointer;
+}
+
+.actions span:hover {
+  color: var(--accent);
+}
+
+/* ================= FLOATING BUTTON ================= */
+
+#fabBtn {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 46px;
+  height: 46px;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 24px;
+  border: none;
+  cursor: pointer;
+  z-index: 3000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+#fabBtn:hover {
+  transform: scale(1.08);
+}
+
+#fabBtn:active {
+  transform: scale(.95);
+    }
+
+#fabMenu {
+  position: fixed;
+  right: 20px;
+  bottom: 80px;
+  font-size: 14px;
+  background: #fff;
+  color: #444;
+  border-radius: 8px;
+  padding: 10px;
+  display: none;
+  z-index: 9999;
+}
+
+#fabMenu.show {
+  display: block !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  }
